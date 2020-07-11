@@ -1,0 +1,79 @@
+{
+  "1": {
+    "name": "Porsche Classic",
+    "cost": 350,
+    "description": "Мужские солнцезащитные очки с кайфовыми жёлтыми линзами. Совершенно не напрягают глаза. Даже в самый пасмурный день в них Вы будете в прекрасном настроении.",
+    "img" : "porshe-yellow.png",
+    "imgwebp" : "porshe-yellow.webp"
+  },
+  "2": {
+    "name": "Chanel",
+    "cost": 500,
+    "description": "Женские очки.",
+    "img" : "chanel.png",
+    "imgwebp" : "chanel.webp"
+  },
+  "3": {
+    "name": "Dior",
+    "cost": 400,
+    "description": "Стильные, модные очки в золотой оправе. В них ты точно не останешься незамеченным. Очки в металлической оправе, стекла поликарбонат.",
+    "img" : "dior.png",
+    "imgwebp" : "dior.webp"
+  },
+  "4": {
+    "name": "Gucci",
+    "cost": 500,
+    "description": "Женские очки.",
+    "img" : "gucci.png",
+    "imgwebp" : "gucci.webp"
+  },
+  "5": {
+    "name": "Porsche",
+    "cost": 400,
+    "description": "Крутые мужские очки. Полностью в металлической оправе. Подойдут на среднее и крупное лицо. Стекла с защитой от ультрафиолета.",
+    "img" : "black-reshotka.png",
+    "imgwebp" : "black-reshotka.webp"
+  },
+  "6": {
+    "name": "Dior",
+    "cost": 500,
+    "description": "Женские очки.",
+    "img" : "diorwoman.png",
+    "imgwebp" : "diorwoman.webp"
+  },
+  "7": {
+    "name": "Cartier",
+    "cost": 350,
+    "description": "Классические капли. На среднее и крупное лицо. Металлическая оправа. Линза поликарбонат.",
+    "img" : "carter.png",
+    "imgwebp" : "carter.webp"
+  },
+  "8": {
+    "name": "Louis vuitton",
+    "cost": 500,
+    "description": "Женские очки.",
+    "img" : "louis-vuitton.png",
+    "imgwebp" : "louis-vuitton.webp"
+  },
+  "9": {
+    "name": "Giorgio Armani",
+    "cost": 350,
+    "description": "Капли. Очки в пластиковой матовой оправе. Фиолетовые линзы.",
+    "img" : "armani.png",
+    "imgwebp" : "armani.webp"
+  },
+  "10": {
+    "name": "Unknow",
+    "cost": 500,
+    "description": "Женские очки.",
+    "img" : "unknow.png",
+    "imgwebp" : "unknow.webp"
+  },
+  "11": {
+    "name": "Carrera",
+    "cost": 500,
+    "description": "Мужские очки.",
+    "img" : "carrera.png",
+    "imgwebp" : "carrera.webp"
+  }
+}
