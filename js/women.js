@@ -1,9 +1,11 @@
 const bodyEl = document.querySelector('body');
 const burger = document.querySelector('.js-burger');
 const menu = document.querySelector('.js-menu-nav');
+const menuLink = document.querySelectorAll('.menu-nav__link');
+const modal = document.querySelector('.modal');
+
 
 let cart = {};   // Моя корзина
-let later = {}; //  Мои желания
 
 function init() {
     // Вычитуем файл goods.json
@@ -33,10 +35,16 @@ function goodsOut(data) {
                             <a href="goods.html#${key}">
                                 <h3 class="cart__name">${data[key].name}</h3>
                                 <picture><source srcset="img/${data[key].imgwebp}" type="image/webp"><img class="cart__image" src="img/${data[key].img}" alt="${data[key].name}"></picture>
+                                <p class="cart__descr">${data[key].descr}</p>
                             </a>
                         </div>
                         <div class="cart__cost">${data[key].cost} грн</div>
-                        <button class="cart__add-to-cart" type="button" data-id="${key}">В корзину</button>
+                        <button class="cart__add-to-cart neon-btn" type="button" data-id="${key}">В корзину
+                            <span class="neon-btn__decorate neon-btn__decorate--one" aria-hidden="true"></span>
+                            <span class="neon-btn__decorate neon-btn__decorate--two" aria-hidden="true"></span>
+                            <span class="neon-btn__decorate neon-btn__decorate--three" aria-hidden="true"></span>
+                            <span class="neon-btn__decorate neon-btn__decorate--four" aria-hidden="true"></span>
+                        </button>
                     </li>`;
                     // <p class="cart__descr">${data[key].description}</p>
         }
@@ -44,18 +52,6 @@ function goodsOut(data) {
 
     $('.goods-out').html(out);
     $('.cart__add-to-cart').on('click', addToCart);
-    $('.cart__add-to-later').on('click', addToLater);
-}
-
-function addToLater() {
-    let id = $(this).attr('data-id');
-
-    if (later[id] == undefined) {
-        later[id] = 1;   // Если в желаниях нет товара - делаем равным 1
-    }
-    
-    showMiniLater();
-    saveLater();
 }
 
 function addToCart() {
@@ -73,21 +69,9 @@ function addToCart() {
     saveСart();
 }
 
-function saveLater() {
-    // Сохраняю корзину в localStorage
-    localStorage.setItem('later', JSON.stringify(later)); // Преобразовываем корзину в строку
-}
-
 function saveСart() {
     // Сохраняю корзину в localStorage
     localStorage.setItem('cart', JSON.stringify(cart)); // Преобразовываем корзину в строку
-}
-
-function showMiniLater() {
-    let out = '';
-    out += Object.keys(later).reduce((total, key) => total += later[key], 0);
-
-    $('.mini-later').html(out);
 }
 
 function showMiniCart() {
@@ -101,15 +85,6 @@ function showMiniCart() {
     $('.mini-cart').html(out);
 }
 
-function loadLater() {
-    // Проверяю есть ли в localStorage запись cart
-    if (localStorage.getItem('later') ) {
-        // Если есть - расшифровываю и записываю в переменную cart
-        later = JSON.parse(localStorage.getItem('later') );
-        showMiniLater();
-    }
-}
-
 function loadCart() {
     // Проверяю есть ли в localStorage запись cart
     if (localStorage.getItem('cart') ) {
@@ -120,21 +95,17 @@ function loadCart() {
 }
 
 function showMenu() {
-    menu.classList.toggle('active');
     bodyEl.classList.toggle('active');
+    menuLink.forEach(el => el.addEventListener('click', closeMenu));
+    modal.addEventListener('click', closeMenu);
+}
+
+function closeMenu() {
+    bodyEl.classList.remove('active');
 }
 
 $('document').ready(function() {
-    $('.owl-carousel').owlCarousel({
-        items: 1,
-        loop: true,
-        dots: false,
-        autoplay: {
-            delay: 2500,
-          },
-    });
     init();
-    loadLater();
     loadCart();
     burger.addEventListener('click', showMenu);
 });

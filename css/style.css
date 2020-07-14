@@ -956,9 +956,8 @@ button:focus {
   background: #bc378b;
   cursor: pointer;
   border: none;
-  letter-spacing: 3px;
+  letter-spacing: 2.14px;
   position: relative;
-  padding: 15px 30px;
   overflow: hidden;
   -webkit-transition: 0.25s;
   -o-transition: 0.25s;
@@ -1167,12 +1166,12 @@ button:focus {
 
 .cart-main {
   padding: 100px 0 0;
-  background-color: #2b2b2b;
+  background-color: #f8f5f5;
   overflow: hidden;
 }
 
 .cart-main__container {
-  color: #ffffff;
+  color: #424242;
   max-width: 1200px;
   padding: 0 150px;
   display: -webkit-box;
@@ -1180,8 +1179,10 @@ button:focus {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  background-color: #5a4f4f;
+  background-color: #fafafa;
   border-radius: 25px;
+  -webkit-box-shadow: 1px 1px 5px 5px rgba(197, 189, 198, 0.8);
+          box-shadow: 1px 1px 5px 5px rgba(197, 189, 198, 0.8);
 }
 
 .cart-main__descr {
@@ -1208,11 +1209,6 @@ button:focus {
 .main-cart__empty {
   font-size: 20px;
   font-weight: 500;
-}
-
-.main-cart__catalog {
-  color: #ffffff;
-  border-bottom: 1px solid #ffffff;
 }
 
 .main-cart__item {
@@ -1242,6 +1238,7 @@ button:focus {
 }
 
 .main-cart__name {
+  color: #000000;
   min-width: 250px;
   max-width: 250px;
 }
@@ -1257,7 +1254,7 @@ button:focus {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  border: 3px solid #e9dbdbd3;
+  border: 3px solid #000000;
   border-radius: 25px;
   font-size: 20px;
 }
@@ -1267,7 +1264,7 @@ button:focus {
   text-align: center;
   border: none;
   background: transparent;
-  color: #ffffff;
+  color: #000000;
   -webkit-transform: scale(1.5);
       -ms-transform: scale(1.5);
           transform: scale(1.5);
@@ -1276,16 +1273,12 @@ button:focus {
   outline: none;
 }
 
-.main-cart__minus-goods:focus {
-  color: #000000;
-}
-
 .main-cart__plus-goods {
   padding: 0;
   text-align: center;
   border: none;
   background: transparent;
-  color: #ffffff;
+  color: #000000;
   -webkit-transform: scale(1.5);
       -ms-transform: scale(1.5);
           transform: scale(1.5);
@@ -1293,11 +1286,12 @@ button:focus {
 }
 
 .main-cart__quantity {
+  color: #000000;
   text-align: center;
   width: 50px;
   margin: 0 5px;
-  border-left: 3px solid #e9dbdbd3;
-  border-right: 3px solid #e9dbdbd3;
+  border-left: 3px solid #000000;
+  border-right: 3px solid #000000;
 }
 
 .main-cart__sum {
@@ -1306,29 +1300,23 @@ button:focus {
 
 .main-cart__del-goods {
   border: none;
+  padding: 20px;
   background: transparent;
   background-image: url("../img/trash.png");
   background-repeat: no-repeat;
   background-size: contain;
-  color: #f50a0afa;
-  -webkit-transform: scale(1.5);
-      -ms-transform: scale(1.5);
-          transform: scale(1.5);
-}
-
-.main-cart__del-goods:focus {
-  color: #f50a0afa;
-  opacity: 0.9;
 }
 
 .form {
+  max-width: 1200px;
   width: 100%;
-  background-color: #5a4f4f;
-  border-radius: 25px;
   margin: 0 auto;
 }
 
 .form__container {
+  background: -webkit-gradient(linear, left top, right top, color-stop(0, #991c3f), to(#542e78)) no-repeat;
+  background: -o-linear-gradient(left, #991c3f 0, #542e78 100%) no-repeat;
+  background: linear-gradient(to right, #991c3f 0, #542e78 100%) no-repeat;
   margin: 50px auto;
   padding: 50px 50px 0;
   max-width: 600px;
@@ -1338,8 +1326,9 @@ button:focus {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  background-color: #5a4f4f;
   border-radius: 25px;
+  -webkit-box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.7);
+          box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.7);
 }
 
 .form__descr {
@@ -1377,7 +1366,6 @@ button:focus {
   font-weight: 500;
   border: none;
   border-radius: 25px;
-  background-color: #171514d3;
   padding: 10px 20px;
   margin: 0 auto;
   width: 65%;

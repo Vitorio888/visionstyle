@@ -28,7 +28,7 @@ function goodsOut(data) {
     let out = '';
     // Перебираем асоциативные массивы или объекты
     for (let key in data) {
-        out += `<li class="cart animate__animated animate__slideInLeft">
+        out += `<li class="cart">
                     <div class="cart__container">
                         <a href="goods.html#${key}">
                             <h3 class="cart__name">${data[key].name}</h3>
