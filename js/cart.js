@@ -1,17 +1,10 @@
 const bodyEl = document.querySelector('body');
 const burger = document.querySelector('.js-burger');
 const menu = document.querySelector('.js-menu-nav');
+const menuLink = document.querySelectorAll('.menu-nav__link');
+const modal = document.querySelector('.modal');
 
 let cart = {};  // Корзина
-
-function loadLater() {
-    // Проверяю есть ли в localStorage запись cart
-    if (localStorage.getItem('later') ) {
-        // Если есть - расшифровываю и записываю в переменную cart
-        later = JSON.parse(localStorage.getItem('later') );
-        showMiniLater();
-    }
-}
 
 function loadCart() {
     // Проверяю есть ли в localStorage запись cart
@@ -113,13 +106,6 @@ function isEmpty(object) {
     }
 }
 
-function showMiniLater() {
-    let out = '';
-    out += Object.keys(later).reduce((total, key) => total += later[key], 0);
-
-    $('.mini-later').html(out);
-}
-
 function sendEmail() {
     let ename = $('.ename').val();
     let email = $('.email').val();
@@ -156,13 +142,17 @@ function sendEmail() {
 }
 
 function showMenu() {
-    menu.classList.toggle('active');
     bodyEl.classList.toggle('active');
+    menuLink.forEach(el => el.addEventListener('click', closeMenu));
+    modal.addEventListener('click', closeMenu);
+}
+
+function closeMenu() {
+    bodyEl.classList.remove('active');
 }
 
 $(document).ready(function () {
     loadCart();
-    loadLater();
     $('.send-email').on('click', sendEmail);    // Отправить письмо с заказом
     burger.addEventListener('click', showMenu);
 });

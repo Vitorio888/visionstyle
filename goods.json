@@ -2,78 +2,100 @@
   "1": {
     "name": "Porsche Classic",
     "cost": 350,
+    "descr" : "Мужские солнцезащитные очки с кайфовыми жёлтыми линзами...",
     "description": "Мужские солнцезащитные очки с кайфовыми жёлтыми линзами. Совершенно не напрягают глаза. Даже в самый пасмурный день в них Вы будете в прекрасном настроении.",
     "img" : "porshe-yellow.png",
-    "imgwebp" : "porshe-yellow.webp"
+    "imgwebp" : "porshe-yellow.webp",
+    "male" : "men"
   },
   "2": {
     "name": "Chanel",
     "cost": 500,
+    "descr": "Женские очки...",
     "description": "Женские очки.",
     "img" : "chanel.png",
-    "imgwebp" : "chanel.webp"
+    "imgwebp" : "chanel.webp",
+    "male" : "women"
   },
   "3": {
     "name": "Dior",
     "cost": 400,
+    "descr": "Стильные, модные очки в золотой оправе...",
     "description": "Стильные, модные очки в золотой оправе. В них ты точно не останешься незамеченным. Очки в металлической оправе, стекла поликарбонат.",
     "img" : "dior.png",
-    "imgwebp" : "dior.webp"
+    "imgwebp" : "dior.webp",
+    "male" : "men"
   },
   "4": {
     "name": "Gucci",
     "cost": 500,
+    "descr": "Женские очки...",
     "description": "Женские очки.",
     "img" : "gucci.png",
-    "imgwebp" : "gucci.webp"
+    "imgwebp" : "gucci.webp",
+    "male" : "women"
   },
   "5": {
     "name": "Porsche",
     "cost": 400,
+    "descr": "Крутые мужские очки. Полностью в металлической оправе...",
     "description": "Крутые мужские очки. Полностью в металлической оправе. Подойдут на среднее и крупное лицо. Стекла с защитой от ультрафиолета.",
     "img" : "black-reshotka.png",
-    "imgwebp" : "black-reshotka.webp"
+    "imgwebp" : "black-reshotka.webp",
+    "male" : "men"
   },
   "6": {
     "name": "Dior",
     "cost": 500,
+    "descr": "Женские очки...",
     "description": "Женские очки.",
     "img" : "diorwoman.png",
-    "imgwebp" : "diorwoman.webp"
+    "imgwebp" : "diorwoman.webp",
+    "male" : "women"
   },
   "7": {
     "name": "Cartier",
     "cost": 350,
+    "descr": "Классические капли. На среднее и крупное лицо...",
     "description": "Классические капли. На среднее и крупное лицо. Металлическая оправа. Линза поликарбонат.",
     "img" : "carter.png",
-    "imgwebp" : "carter.webp"
+    "imgwebp" : "carter.webp",
+    "male" : "men"
   },
   "8": {
     "name": "Louis vuitton",
     "cost": 500,
+    "descr": "Женские очки...",
     "description": "Женские очки.",
     "img" : "louis-vuitton.png",
-    "imgwebp" : "louis-vuitton.webp"
+    "imgwebp" : "louis-vuitton.webp",
+    "male" : "women"
   },
   "9": {
     "name": "Giorgio Armani",
     "cost": 350,
+    "descr": "Капли. Очки в пластиковой матовой оправе...",
     "description": "Капли. Очки в пластиковой матовой оправе. Фиолетовые линзы.",
     "img" : "armani.png",
-    "imgwebp" : "armani.webp"
+    "imgwebp" : "armani.webp",
+    "male" : "men"
   },
   "10": {
     "name": "Unknow",
     "cost": 500,
+    "descr": "Женские очки...",
     "description": "Женские очки.",
     "img" : "unknow.png",
-    "imgwebp" : "unknow.webp"
+    "imgwebp" : "unknow.webp",
+    "male" : "women"
   },
   "11": {
     "name": "Carrera",
     "cost": 500,
+    "descr": "Мужские очки...",
     "description": "Мужские очки.",
     "img" : "carrera.png",
-    "imgwebp" : "carrera.webp"
+    "imgwebp" : "carrera.webp",
+    "male" : "men"
   }
 }

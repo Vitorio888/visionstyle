@@ -1,9 +1,10 @@
 const bodyEl = document.querySelector('body');
 const burger = document.querySelector('.js-burger');
 const menu = document.querySelector('.js-menu-nav');
+const menuLink = document.querySelectorAll('.menu-nav__link');
+const modal = document.querySelector('.modal');
 
 let cart = {};   // Моя корзина
-let later = {}; //  Мои желания
 // let goods = {}; // эотот товар
 
 function init() {
@@ -16,46 +17,35 @@ function init() {
         // data = JSON.parse(data);
         let hash = window.location.hash.substring(1);
         // data = hash;
+        // <div class="single-goods__carusel"></div>
         console.log(data);
         for (let key in data) {
             if (key === hash) {
 
                 let out = `<li class="cart">
                             <div class="cart__container">
-                                <button class="cart__add-to-later" type="button" data-id="${key}">&hearts;</button>
                                 <h3 class="cart__name">${data[key].name}</h3>
-                                <picture><source srcset="img/${data[key].imgwebp}" type="image/webp"><img class="cart__image" src="img/${data[key].img}" alt="${data[key].name}"></picture>
+                                
+                                    <picture><source srcset="img/${data[key].imgwebp}" type="image/webp"><img class="cart__image" src="img/${data[key].img}" alt="${data[key].name}"></picture>
+                                    <picture><source srcset="img/${data[key].imgwebp}" type="image/webp"><img class="cart__image" src="img/${data[key].img}" alt="${data[key].name}"></picture>
+                                    <picture><source srcset="img/${data[key].imgwebp}" type="image/webp"><img class="cart__image" src="img/${data[key].img}" alt="${data[key].name}"></picture>
+                                
                                 <p class="cart__descr">${data[key].description}</p>
                             </div>
                             <div class="cart__cost">${data[key].cost} грн</div>
-                            <button class="cart__add-to-cart" type="button" data-id="${key}">Добавить в корзину</button>
+                            <button class="cart__add-to-cart neon-btn" type="button" data-id="${key}">В корзину
+                                <span class="neon-btn__decorate neon-btn__decorate--one" aria-hidden="true"></span>
+                                <span class="neon-btn__decorate neon-btn__decorate--two" aria-hidden="true"></span>
+                                <span class="neon-btn__decorate neon-btn__decorate--three" aria-hidden="true"></span>
+                                <span class="neon-btn__decorate neon-btn__decorate--four" aria-hidden="true"></span>
+                            </button>
                         </li>`;
             
                 $('.goods-out').html(out);
                 $('.cart__add-to-cart').on('click', addToCart);
-                $('.cart__add-to-later').on('click', addToLater);
             }
         }
     }
-    // console.log(hash);
-    // $.post(
-    //     "admin/core.php",
-    //     {
-    //         "action" : "loadGoods"
-    //     },
-    //     goodsOut
-    // );
-
-function addToLater() {
-    let id = $(this).attr('data-id');
-
-    if (later[id] == undefined) {
-        later[id] = 1;   // Если в желаниях нет товара - делаем равным 1
-    }
-    
-    showMiniLater();
-    saveLater();
-}
 
 function addToCart() {
     // Добавляем товар в корзину
@@ -72,36 +62,15 @@ function addToCart() {
     saveСart();
 }
 
-function saveLater() {
-    // Сохраняю корзину в localStorage
-    localStorage.setItem('later', JSON.stringify(later)); // Преобразовываем корзину в строку
-}
-
 function saveСart() {
     // Сохраняю корзину в localStorage
     localStorage.setItem('cart', JSON.stringify(cart)); // Преобразовываем корзину в строку
-}
-
-function showMiniLater() {
-    let out = '';
-    out += Object.keys(later).reduce((total, key) => total += later[key], 0);
-
-    $('.mini-later').html(out);
 }
 
 function showMiniCart() {
     let out = '';
     out += Object.keys(cart).reduce((total, key) => total += cart[key], 0);
     $('.mini-cart').html(out);
-}
-
-function loadLater() {
-    // Проверяю есть ли в localStorage запись cart
-    if (localStorage.getItem('later') ) {
-        // Если есть - расшифровываю и записываю в переменную cart
-        later = JSON.parse(localStorage.getItem('later') );
-        showMiniLater();
-    }
 }
 
 function loadCart() {
@@ -114,13 +83,17 @@ function loadCart() {
 }
 
 function showMenu() {
-    menu.classList.toggle('active');
     bodyEl.classList.toggle('active');
+    menuLink.forEach(el => el.addEventListener('click', closeMenu));
+    modal.addEventListener('click', closeMenu);
+}
+
+function closeMenu() {
+    bodyEl.classList.remove('active');
 }
 
 $('document').ready(function() {
     init();
-    loadLater();
     loadCart();
     burger.addEventListener('click', showMenu);
 });
