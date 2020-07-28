@@ -16,9 +16,9 @@ $sum = 0;
 foreach ($cart as $id=>$count) {
     $message .=$json[$id]['name'].' --- ';
     $message .=$count.' --- ';
-    $message .=$count*$json[$id]['cost'];
+    $message .=$count*$json[$id]['cost'].'грн';
     $message .= '<br>';
-    $sum = $sum +$count*$json[$id]['cost'];
+    $sum = $sum +$count*$json[$id]['cost'].'грн';
 }
 
 $message .='Всего: '.$sum;
